@@ -7,14 +7,14 @@
 - The user provides the number of points to use in the simulation.
 
 ## Instructions to run the program:
-- Compile with gcc:
-        ```
-        gcc mcarlo.c -o mcarlo -Wall
-        ```
-- Run the prgoram:
-        ```
-        ./mcarlo <num of points>
-        ```
+1. Compile with gcc:
+```
+gcc mcarlo.c -o mcarlo -Wall
+```
+2. Run the prgoram:
+```
+./mcarlo <num of points>
+```
 
 ## Source Files:
 - mcarlo.c
