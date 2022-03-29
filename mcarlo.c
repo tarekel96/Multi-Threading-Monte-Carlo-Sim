@@ -66,7 +66,7 @@ int main(int argc, char *argv[])
         // user cannot say there are 0 total points.
         if (npoints == 0)
         {
-                printf("Error: An incorrect number of arguments was provided.\nPlease provide the total number of points that is not 0.");
+                printf("Error: An incorrect type of argument was provided.\nPlease provide the total number of points that is not 0.");
                 exit(EXIT_FAILURE);
         }
 
