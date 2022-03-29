@@ -30,29 +30,19 @@ int count_points(int npoints)
         return hit_count;
 }
 
-// float calc_pi(int npoints)
-// {
-//         printf("calcpi npoints = %i\n", npoints);
-//         printf("calcpi PI ratio: %d\n", (4.00 * circle_points) / npoints);
-//         return (float)(4.00 * circle_points) / npoints;
-// }
-
 void *calc_pi(void *param)
 {
         int npoints = *((int *)param);
-        printf("calcpi npoints = %i\n", npoints);
-        printf("calcpi PI ratio: %d\n", (4.00 * circle_points) / npoints);
         pi = (float)(4.00 * circle_points) / npoints;
+        pthread_exit(0);
 }
 
 void *calc_npoints(void *param)
 {
         int points = *((int *)param);
-        printf("runner npoints = %i\n", points);
         double x, y = 0.0;
         // Check for points inside circle
         circle_points = count_points(points);
-        printf("runner circle points = %i\n", circle_points);
         // float hit_ratio = (4.00 * hit_count) / npoints;
         pthread_exit(0);
 }
@@ -87,9 +77,9 @@ int main(int argc, char *argv[])
         pthread_create(&tID2, 0, calc_pi, &npoints);
         pthread_join(tID2, NULL);
 
-        printf("main npoints = %i\n", npoints);
-        printf("main circle points = %i\n", circle_points);
-        printf("main Pi ratio: %f\n", pi);
+        printf("Total number of points (npoints) = %i\n", npoints);
+        printf("Total number of circle points (circle points) = %i\n", circle_points);
+        printf("Pi ratio (circle points/total number of points): %f\n", pi);
 
         exit(EXIT_SUCCESS);
 }
