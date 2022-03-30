@@ -9,7 +9,7 @@
 ## Instructions to run the program:
 1. Compile with gcc:
 ```
-gcc mcarlo.c -o mcarlo -Wall
+gcc mcarlo.c -o mcarlo -Wall -pthread -lm
 ```
 2. Run the prgoram:
 ```
