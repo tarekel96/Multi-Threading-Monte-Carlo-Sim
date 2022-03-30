@@ -40,7 +40,6 @@ void *calc_pi(void *param)
 void *calc_npoints(void *param)
 {
         int points = *((int *)param);
-        double x, y = 0.0;
         // Check for points inside circle
         circle_points = count_points(points);
         // float hit_ratio = (4.00 * hit_count) / npoints;
@@ -56,10 +55,9 @@ int main(int argc, char *argv[])
                 exit(EXIT_FAILURE);
         }
         // vars
-        pthread_t tID;       // thread 1 id
-        pthread_t tID2;      // thread 2 id
-        pthread_attr_t attr; // thread attributes (NULL)
-        int npoints;         // total number of points (provided as an arg from the user)
+        pthread_t tID;  // thread 1 id
+        pthread_t tID2; // thread 2 id
+        int npoints;    // total number of points (provided as an arg from the user)
 
         npoints = atoi(argv[1]); // convert str to int
 
